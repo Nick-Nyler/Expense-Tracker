@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../App.css';
 
 function ExpenseForm({ onAddExpense }) {
   const [name, setName] = useState('');
@@ -19,42 +20,46 @@ function ExpenseForm({ onAddExpense }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={styles.form}>
+    <form onSubmit={handleSubmit} className="expense-form">
       <input
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        style={styles.input}
+        className="expense-input"
         placeholder="Enter expense name"
+        required
       />
       <input
         type="text"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        style={styles.input}
+        className="expense-input"
         placeholder="Enter description"
       />
       <input
         type="text"
         value={category}
         onChange={(e) => setCategory(e.target.value)}
-        style={styles.input}
+        className="expense-input"
         placeholder="Enter category"
+        required
       />
       <input
         type="number"
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
-        style={styles.input}
+        className="expense-input"
         placeholder="Enter amount"
+        required
       />
       <input
         type="date"
         value={date}
         onChange={(e) => setDate(e.target.value)}
-        style={styles.input}
+        className="expense-input"
+        required
       />
-      <button type="submit" style={styles.button}>Submit</button>
+      <button type="submit" className="expense-button">Submit</button>
     </form>
   );
 }

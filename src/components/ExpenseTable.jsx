@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../App.css';
 
 function ExpenseTable({ expenses, onDelete }) {
   const [sortKey, setSortKey] = useState('');
@@ -28,43 +29,46 @@ function ExpenseTable({ expenses, onDelete }) {
   };
 
   return (
-    <table style={styles.table}>
-      <thead style={styles.thead}>
-        <tr>
-          <th style={styles.th} onClick={() => handleSort('name')}>
-            Expense{getSortIndicator('name')}
-          </th>
-          <th style={styles.th} onClick={() => handleSort('description')}>
-            Description{getSortIndicator('description')}
-          </th>
-          <th style={styles.th} onClick={() => handleSort('category')}>
-            Category{getSortIndicator('category')}
-          </th>
-          <th style={styles.th}>Amount</th>
-          <th style={styles.th}>Date</th>
-          <th style={styles.th}>Actions</th>
-        </tr>
-      </thead>
-      <tbody style={styles.tbody}>
-        {sortedExpenses.map((expense) => (
-          <tr key={expense.id} style={styles.tr}>
-            <td style={styles.td}>{expense.name}</td>
-            <td style={styles.td}>{expense.description}</td>
-            <td style={styles.td}>{expense.category}</td>
-            <td style={styles.td}>${expense.amount}</td>
-            <td style={styles.td}>{expense.date}</td>
-            <td style={styles.td}>
-              <button
-                onClick={() => onDelete(expense.id)}
-                style={styles.deleteButton}
-              >
-                Delete
-              </button>
-            </td>
+    <div className="table-container">
+      <table className="expense-table">
+        <thead className="table-head">
+          <tr>
+            <th className="table-th" onClick={() => handleSort('name')}>
+              Expense{getSortIndicator('name')}
+            </th>
+            <th className="table-th" onClick={() => handleSort('description')}>
+              Description{getSortIndicator('description')}
+            </th>
+            <th className="table-th" onClick={() => handleSort('category')}>
+              Category{getSortIndicator('category')}
+            </th>
+            <th className="table-th">Amount</th>
+            <th className="table-th">Date</th>
+            <th className="table-th">Actions</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody className="table-body">
+          {sortedExpenses.map((expense) => (
+            <tr key={expense.id} className="table-row">
+              <td className="table-td">{expense.name}</td>
+              <td className="table-td">{expense.description}</td>
+              <td className="table-td">{expense.category}</td>
+              <td className="table-td">${expense.amount.toFixed(2)}</td>
+              <td className="table-td">{expense.date}</td>
+              <td className="table-td">
+                <button
+                  onClick={() => onDelete(expense.id)}
+                  className="delete-button"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {expenses.length === 0 && <p className="no-expenses">No expenses to display.</p>}
+    </div>
   );
 }
 
