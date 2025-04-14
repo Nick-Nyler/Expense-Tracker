@@ -89,13 +89,6 @@
   background-color: #0056b3;
 }
 
-.table-container {
-  margin-top: 20px;
-  border-radius: 5px;
-  overflow: hidden;
-  background-color: #2c2c2c;
-}
-
 .expense-table {
   width: 100%;
   border-collapse: collapse;
@@ -146,35 +139,23 @@
   text-align: center;
 }
 
-.search-input {
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #444;
-  border-radius: 5px;
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 1em;
-  background-color: #333;
-  color: #fff;
-}
-
 .right-area {
   flex: 2;
   display: flex;
   flex-direction: column;
-  gap: 10px; 
+  gap: 5px;
 }
 
 .sort-options {
   display: flex;
   align-items: center;
-  margin-bottom: 5px; 
+  margin-bottom: 2px;
 }
 
 .sort-label {
   color: #eee;
   font-size: 0.9em;
-  margin-right: 8px; 
+  margin-right: 5px; 
 }
 
 .sort-button {
@@ -182,10 +163,10 @@
   color: #eee;
   border: 1px solid #555;
   border-radius: 5px;
-  padding: 6px 10px; 
-  margin-right: 3px; 
+  padding: 4px 8px;
+  margin-right: 2px; 
   cursor: pointer;
-  font-size: 0.85em; 
+  font-size: 0.8em; 
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
@@ -206,13 +187,20 @@
 }
 
 .search-input {
-  padding: 8px; 
-  margin-bottom: 10px; 
+  padding: 6px; 
+  margin-bottom: 0; 
   border: 1px solid #444;
   border-radius: 5px;
   width: 100%;
   box-sizing: border-box;
-  font-size: 0.9em;
+  font-size: 0.85em; 
   background-color: #333;
   color: #fff;
+}
+
+.table-container {
+  margin-top: 0; 
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #2c2c2c;
 }

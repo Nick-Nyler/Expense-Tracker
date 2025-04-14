@@ -67,7 +67,7 @@ function ExpenseForm({ onAddExpense }) {
         onChange={(e) => setDate(e.target.value)}
         required
       />
-      <button type="submit" className="expense-button">Add Expense</button>
+      <button type="submit" className="expense-button">Submit</button>
     </form>
   );
 }
