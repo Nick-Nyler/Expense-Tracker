@@ -6,7 +6,7 @@ function SearchBar({ search, setSearch }) {
     <input
       type="text"
       className="search-input"
-      placeholder="Search by description or category..."
+      placeholder="🔍 Search expenses"
       value={search}
       onChange={(e) => setSearch(e.target.value)}
     />
