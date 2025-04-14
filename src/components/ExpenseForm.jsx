@@ -58,7 +58,6 @@ function ExpenseForm({ onAddExpense }) {
         onChange={(e) => setAmount(e.target.value)}
         required
       />
-      <label htmlFor="date" className="expense-label">Select date</label>
       <input
         type="date"
         id="date"
