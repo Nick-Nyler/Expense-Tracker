@@ -101,12 +101,13 @@
 }
 
 .table-th {
-  padding: 10px;
+  padding: 10px 8px;
   border-bottom: 1px solid #555;
   text-align: left;
   font-weight: bold;
   cursor: pointer;
   font-size: 0.9em;
+  white-space: nowrap; 
 }
 
 .table-body .table-row:nth-child(even) {
@@ -114,10 +115,41 @@
 }
 
 .table-td {
-  padding: 10px;
+  padding: 10px 8px;
   border-bottom: 1px solid #444;
   font-size: 0.9em;
 }
+
+.table-td:nth-child(2) { 
+  width: 70%; 
+  white-space: normal; 
+}
+
+.table-td:nth-child(5) { 
+  white-space: nowrap; 
+}
+
+.table-td:nth-child(6) { 
+  white-space: nowrap; 
+  text-align: center; 
+}
+
+.table-td:nth-child(1) { 
+  width: 15%;
+  white-space: nowrap;
+}
+
+.table-td:nth-child(3) {
+  width: 15%;
+  white-space: nowrap;
+}
+
+.table-td:nth-child(4) { 
+  width: 10%;
+  white-space: nowrap;
+  text-align: right;
+}
+
 
 .delete-button {
   background-color: #dc3545;
