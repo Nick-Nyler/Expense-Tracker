@@ -11,7 +11,14 @@
 .app-header {
   text-align: left;
   color: #eee;
-  margin-Bottom: 20px;
+  margin-bottom: 5px;
+}
+
+.app-subheader {
+  font-size: 0.9em;
+  color: #aaa;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .app-content {
@@ -48,6 +55,13 @@
   gap: 10px;
 }
 
+.expense-label {
+  color: #eee;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  display: block; 
+}
+
 .expense-input {
   padding: 10px;
   margin-bottom: 10px;
@@ -56,6 +70,8 @@
   font-size: 1em;
   background-color: #333;
   color: #fff;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .expense-button {
@@ -66,6 +82,7 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 1em;
+  width: 100%;
 }
 
 .expense-button:hover {

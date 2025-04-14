@@ -33,6 +33,7 @@ function App() {
   return (
     <div className="app-container">
       <h1 className="app-header">Expense Tracker</h1>
+      <p className="app-subheader">Start taking control of your finances and life.Record, categorize and analyze your spending</p>
       <div className="app-content">
         <div className="form-area">
           <div className="form-container">
