@@ -32,14 +32,5 @@ This app was built as part of the **Phase 2 Code Challenge** for the Software En
 - Deployed via Netlify / Vercel
 
 ---
-
-## 📦 Getting Started
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-username/expense-tracker.git
-cd expense-tracker
-
 ### Website Link
 https://expense-tracker-murex-six.vercel.app/
