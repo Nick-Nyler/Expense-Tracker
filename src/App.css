@@ -157,3 +157,62 @@
   background-color: #333;
   color: #fff;
 }
+
+.right-area {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+}
+
+.sort-options {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.sort-label {
+  color: #eee;
+  font-size: 0.9em;
+  margin-right: 10px;
+}
+
+.sort-button {
+  background-color: #333;
+  color: #eee;
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin-right: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.sort-button.active {
+  background-color: #007bff;
+  border-color: #007bff;
+  font-weight: bold;
+}
+
+.sort-button.clear {
+  background-color: #555;
+  border-color: #777;
+}
+
+.sort-button:hover {
+  background-color: #444;
+  border-color: #666;
+}
+
+.search-input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1em;
+  background-color: #333;
+  color: #fff;
+}

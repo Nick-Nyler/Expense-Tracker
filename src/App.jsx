@@ -14,6 +14,7 @@ function App() {
   ]);
 
   const [search, setSearch] = useState('');
+  const [sortBy, setSortBy] = useState(''); 
 
   const handleAddExpense = (expense) => {
     const newExpense = { ...expense, id: Date.now() };
@@ -24,7 +25,16 @@ function App() {
     setExpenses(expenses.filter(exp => exp.id !== id));
   };
 
-  const filteredExpenses = expenses.filter(expense =>
+  const sortedExpenses = [...expenses].sort((a, b) => {
+    if (sortBy === 'category') {
+      return a.category.localeCompare(b.category);
+    } else if (sortBy === 'description') {
+      return a.description.localeCompare(b.description);
+    }
+    return 0; // No sorting
+  });
+
+  const filteredExpenses = sortedExpenses.filter(expense =>
     expense.name.toLowerCase().includes(search.toLowerCase()) ||
     expense.description.toLowerCase().includes(search.toLowerCase()) ||
     expense.category.toLowerCase().includes(search.toLowerCase())
@@ -33,7 +43,7 @@ function App() {
   return (
     <div className="app-container">
       <h1 className="app-header">Expense Tracker</h1>
-      <p className="app-subheader">Start taking control of your finances and life.Record, categorize and analyze your spending</p>
+      <p className="app-subheader">Organizing record of your finance activity. Budget, categorize and track your spending</p>
       <div className="app-content">
         <div className="form-area">
           <div className="form-container">
@@ -42,6 +52,22 @@ function App() {
           </div>
         </div>
         <div className="right-area">
+          <div className="sort-options">
+            <label className="sort-label">Sort by:</label>
+            <button
+              className={`sort-button ${sortBy === 'category' ? 'active' : ''}`}
+              onClick={() => setSortBy(sortBy === 'category' ? '' : 'category')}
+            >
+              Category
+            </button>
+            <button
+              className={`sort-button ${sortBy === 'description' ? 'active' : ''}`}
+              onClick={() => setSortBy(sortBy === 'description' ? '' : 'description')}
+            >
+              Description
+            </button>
+            {sortBy && <button className="sort-button clear" onClick={() => setSortBy('')}>Clear Sort</button>}
+          </div>
           <SearchBar search={search} setSearch={setSearch} />
           <ExpenseTable expenses={filteredExpenses} onDelete={handleDelete} />
         </div>
