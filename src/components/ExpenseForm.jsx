@@ -36,7 +36,7 @@ function ExpenseForm({ onAddExpense }) {
         type="text"
         id="description"
         className="expense-input"
-        placeholder="Enter description (optional)"
+        placeholder="Enter description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
