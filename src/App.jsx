@@ -31,7 +31,7 @@ function App() {
     } else if (sortBy === 'description') {
       return a.description.localeCompare(b.description);
     }
-    return 0; // No sorting
+    return 0;
   });
 
   const filteredExpenses = sortedExpenses.filter(expense =>
@@ -43,7 +43,7 @@ function App() {
   return (
     <div className="app-container">
       <h1 className="app-header">Expense Tracker</h1>
-      <p className="app-subheader">Organizing record of your finance activity. Budget, categorize and track your spending</p>
+      <p className="app-subheader">Start taking control of your finances and life, record, categorize and analyze your spending.</p>
       <div className="app-content">
         <div className="form-area">
           <div className="form-container">
