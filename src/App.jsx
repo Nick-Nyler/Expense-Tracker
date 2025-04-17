@@ -21,12 +21,12 @@ function App() {
     setExpenses([...expenses, newExpense]);
   };
 
- const handleDelete = (id) => {
-  const confirmDelete = window.confirm("Are you sure you want to delete this expense?");
-  if (confirmDelete) {
-    setExpenses(expenses.filter(exp => exp.id !== id));
-  }
-};
+  const handleDelete = (id) => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this expense?");
+    if (confirmDelete) {
+      setExpenses(expenses.filter(exp => exp.id !== id));
+    }
+  };
 
   const sortedExpenses = [...expenses].sort((a, b) => {
     if (sortBy === 'category') {
@@ -56,20 +56,17 @@ function App() {
         </div>
         <div className="right-area">
           <div className="sort-options">
-            <label className="sort-label">Sort by:</label>
-            <button
-              className={`sort-button ${sortBy === 'category' ? 'active' : ''}`}
-              onClick={() => setSortBy(sortBy === 'category' ? '' : 'category')}
+            <label className="sort-label" htmlFor="sort-dropdown">Sort by:</label>
+            <select
+              id="sort-dropdown"
+              className="sort-dropdown"
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
             >
-              Category
-            </button>
-            <button
-              className={`sort-button ${sortBy === 'description' ? 'active' : ''}`}
-              onClick={() => setSortBy(sortBy === 'description' ? '' : 'description')}
-            >
-              Description
-            </button>
-            {sortBy && <button className="sort-button clear" onClick={() => setSortBy('')}>Clear Sort</button>}
+              <option value="">None</option>
+              <option value="category">Category</option>
+              <option value="description">Description</option>
+            </select>
           </div>
           <SearchBar search={search} setSearch={setSearch} />
           <ExpenseTable expenses={filteredExpenses} onDelete={handleDelete} />
@@ -80,3 +77,4 @@ function App() {
 }
 
 export default App;
+
