@@ -21,9 +21,12 @@ function App() {
     setExpenses([...expenses, newExpense]);
   };
 
-  const handleDelete = (id) => {
+ const handleDelete = (id) => {
+  const confirmDelete = window.confirm("Are you sure you want to delete this expense?");
+  if (confirmDelete) {
     setExpenses(expenses.filter(exp => exp.id !== id));
-  };
+  }
+};
 
   const sortedExpenses = [...expenses].sort((a, b) => {
     if (sortBy === 'category') {
